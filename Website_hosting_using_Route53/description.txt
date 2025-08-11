@@ -1,0 +1,40 @@
+Project Name: Hosting a Scalable Website using AWS EC2, Route 53, Load Balancer, and Custom Domain
+
+Overview:
+In this project, I deployed a fully functional website on Amazon Web Services (AWS) using core infrastructure components such as EC2 (Elastic Compute Cloud), Route 53, an Application Load Balancer (ALB), and a custom domain. The goal was to host a simple yet scalable web application that is accessible through a registered domain name over the internet.
+
+Architecture and Implementation Steps:
+EC2 Instance Setup:
+Launched multiple EC2 instances running Amazon Linux/Ubuntu as the hosting environment.
+Installed and configured a web server (Apache/Nginx) on each instance to serve the website files (HTML/CSS/JavaScript).
+Deployed the website content to /var/www/html.
+Configured security groups to allow inbound HTTP (port 80).
+
+Load Balancer Configuration:
+Created an Application Load Balancer (ALB) to distribute incoming traffic evenly across multiple EC2 instances.
+Configured target groups and registered the EC2 instances to ensure health checks determine if an instance is healthy and able to receive traffic.
+Enabled HTTP listener on port 80 for initial setup and prepared for HTTPS integration for security.
+
+Domain and Route 53 Setup:
+Purchased/used a registered domain from a domain registrar.
+Configured an AWS Route 53 Hosted Zone for the domain.
+Created A records in Route 53 pointing the domain (sparktechnology.online) to the ALB’s DNS name.
+Ensured DNS propagation so that the domain resolves to the load balancer.
+
+Testing and Validation:
+Verified that the domain name successfully points to the load balancer and that traffic is distributed across the EC2 instances.
+Tested high availability by stopping one EC2 instance and confirming that the load balancer routed traffic to the remaining healthy instance(s) without downtime.
+Ensured cross-browser compatibility and responsive design for the website.
+
+Outcome:
+The website is now accessible globally by entering the domain name in a web browser.
+The architecture is scalable (can add/remove EC2 instances without downtime) and highly available (load balancer ensures continuous operation).
+
+Skills Demonstrated:
+AWS EC2 instance provisioning and configuration
+Application Load Balancer setup and traffic routing
+DNS management with Route 53
+Web server installation and deployment
+Networking and security group configuration
+
+High availability and scalability principles in cloud infrastructure
